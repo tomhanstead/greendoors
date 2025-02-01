@@ -26,6 +26,8 @@ class ProductRequest extends FormRequest
             'category' => 'nullable|string|exists:categories,name',
             'sort' => 'nullable|string|in:asc,desc',
             'search' => 'nullable|string',
+            'page' => 'nullable|integer|min:1',
+            'limit' => 'nullable|integer|min:1|max:100',
         ];
     }
 

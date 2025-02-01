@@ -44,6 +44,7 @@ class ProductRepository
      */
     private function generateCacheKey(array $filters, int $perPage): string
     {
-        return 'products:'.md5(json_encode($filters)."|perPage:$perPage");
+        return 'products:' . md5(json_encode($filters) . "|perPage:$perPage");
     }
+
 }
