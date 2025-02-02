@@ -2,9 +2,11 @@
 
 namespace App\Filters;
 
+use App\Contracts\ProductFilterInterface;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
 
-class ProductFilter
+class ProductFilter implements ProductFilterInterface
 {
     /**
      * Applies filters to the query based on the given parameters.

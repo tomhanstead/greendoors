@@ -2,12 +2,13 @@
 
 namespace App\Repositories;
 
+use App\Contracts\ProductRepositoryInterface;
 use App\Filters\ProductFilter;
 use App\Models\Product;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Cache;
 
-class ProductRepository
+class ProductRepository implements ProductRepositoryInterface
 {
     /**
      * Retrieves a paginated list of products based on the provided filters.

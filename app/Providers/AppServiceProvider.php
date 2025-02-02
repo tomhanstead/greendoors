@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\ProductFilterInterface;
+use App\Contracts\ProductRepositoryInterface;
 use App\Contracts\ProductServiceInterface;
+use App\Filters\ProductFilter;
+use App\Repositories\ProductRepository;
 use App\Services\ProductService;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
@@ -17,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->bind(ProductServiceInterface::class, ProductService::class);
+        $this->app->bind(ProductFilterInterface::class, ProductFilter::class);
+        $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
     }
 
     /**

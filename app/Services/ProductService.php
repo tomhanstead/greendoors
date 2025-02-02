@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Contracts\ProductRepositoryInterface;
 use App\Contracts\ProductServiceInterface;
 use App\Exceptions\InvalidProductFilterException;
 use App\Exceptions\ProductNotFoundException;
@@ -10,9 +11,9 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class ProductService implements ProductServiceInterface
 {
-    private ProductRepository $productRepository;
+    private ProductRepositoryInterface $productRepository;
 
-    public function __construct(ProductRepository $productRepository)
+    public function __construct(ProductRepositoryInterface $productRepository)
     {
         $this->productRepository = $productRepository;
     }
